@@ -8,25 +8,40 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ddd;
 }
-.toggle-btn-row {
+.grid-style-12 {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 15px;
 	align-items: center;
+	margin-bottom: 15px;
+	counter-reset: step;
 }
 .single-blk {
 	background: #fff;
 	display: flex;
 	justify-content: center;
 	padding: 15px;
+	position: relative;
+}
+
+.single-blk::after {
+  content: counter(step);
+  counter-increment: ;
+  counter-increment: step;
+  position: absolute;
+  border: ;
+  bottom: 4px;
+  right: 7px;
+  font-size: 10px;
+  color: #000;
+  font-weight: bold;
 }
 /* Base Css End */
 
 
 
 
-
-
+/* toggle button 1 css Start  */
 .r-toggle-btn {
 	width: 74px;
 	height: 36px;
@@ -102,7 +117,81 @@ body {
       transform: rotateY(-180deg);
       background: #F44336;
   }
-
   .r-toggle-btn input[type="checkbox"]:checked ~ .r-toggle-bg {
 	background: #FCEBEB;
   }
+/* toggle button 1 css End  */
+
+
+
+
+  /* Loader 1 Css Start  */
+.loader-bars {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.loader-bars .loader-bar {
+  width: 4px;
+  height: 100%;
+  margin-right: 4px;
+  border-radius: 200px;
+  transform: scaleY(0.2);
+  animation: loader-bars .5s infinite alternate ease-in;
+}
+
+.loader-bars .loader-bar:last-child {
+  margin-right: 0;
+}
+
+.loader-bars .loader-bar:nth-child(1) {
+  background-color: #615dfa;
+}
+
+.loader-bars .loader-bar:nth-child(2) {
+  background-color: #5d71fb;
+  animation-delay: .1s;
+}
+
+.loader-bars .loader-bar:nth-child(3) {
+  background-color: #5983fb;
+  animation-delay: .2s;
+}
+
+.loader-bars .loader-bar:nth-child(4) {
+  background-color: #549afc;
+  animation-delay: .3s;
+}
+
+.loader-bars .loader-bar:nth-child(5) {
+  background-color: #4eb2fd;
+  animation-delay: .4s;
+}
+
+.loader-bars .loader-bar:nth-child(6) {
+  background-color: #49c9fe;
+  animation-delay: .5s;
+}
+
+.loader-bars .loader-bar:nth-child(7) {
+  background-color: #45ddfe;
+  animation-delay: .6s;
+}
+
+.loader-bars .loader-bar:nth-child(8) {
+  background-color: #41efff;
+  animation-delay: .7s;
+}
+
+@keyframes loader-bars {
+  0% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+
+  /* Loader 1 Css Start  */
